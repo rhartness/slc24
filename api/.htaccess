@@ -1,0 +1,8 @@
+php_flag safe_mode on
+php_flag register_globals off
+php_flag magic_quotes_gpc off
+
+RewriteEngine On
+Options +FollowSymlinks
+
+RewriteRule ^(.*)$  api\.php?query=$1&%{QUERY_STRING}
